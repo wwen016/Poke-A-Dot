@@ -150,37 +150,40 @@ def run_game():
             render(screen)
 
 # ---------------------------- START GUI ------------------------------- #
-window = Tk()
-window.title("Poke-A-Dot")
-window.config(bg="#f5f6f5")
+def main():
+    window = Tk()
+    window.title("Poke-A-Dot")
+    window.config(bg="#f5f6f5")
 
-# Image
-logo = Canvas(width=400, height=400, bg="#f5f6f5", highlightthickness=0)
-cursor_img = PhotoImage(file="cursor.png")
-logo.create_image(200, 200, image=cursor_img)
-logo.grid(row=1, column=1)
+    # Image
+    logo = Canvas(width=400, height=400, bg="#f5f6f5", highlightthickness=0)
+    cursor_img = PhotoImage(file="cursor.png")
+    logo.create_image(200, 200, image=cursor_img)
+    logo.grid(row=1, column=1)
 
-#Labels
-title_label = Label(text="Poke-A-Dot", bg="#f7b844", font=(FONT_NAME, 50, "bold"), width=20)
-title_label.grid(row=0, column=0, columnspan=3)
+    #Labels
+    title_label = Label(text="Poke-A-Dot", bg="#f7b844", font=(FONT_NAME, 50, "bold"), width=20)
+    title_label.grid(row=0, column=0, columnspan=3)
 
-# Button
-start_img = PhotoImage(file="start.png")
-start_button = Button(text="START", image=start_img, command=run_game)
-start_button.grid(row=2, column=1)
+    # Button
+    start_img = PhotoImage(file="start.png")
+    start_button = Button(text="START", image=start_img, command=run_game)
+    start_button.grid(row=2, column=1)
 
-add_img = PhotoImage(file="add_button.png")
-add_button = Button(text="ADD", image=add_img, command=input)
-add_button.grid(row=3, column=1)
+    add_img = PhotoImage(file="add_button.png")
+    add_button = Button(text="ADD", image=add_img, command=input)
+    add_button.grid(row=3, column=1)
 
-back_img = PhotoImage(file="back.png")
-back_button = Button(text="BACK", image=back_img)
-back_button.grid(row=2, column=0, padx=(40, 0))
+    back_img = PhotoImage(file="back.png")
+    back_button = Button(text="BACK", image=back_img)
+    back_button.grid(row=2, column=0, padx=(40, 0))
 
-help_button = Button(highlightthickness=0, command=show_info)
-help_img = PhotoImage(file="help.png")
-help_button.config(image=help_img)
-help_button.grid(row=2, column=2, padx=(0, 40))
+    help_button = Button(highlightthickness=0, command=show_info)
+    help_img = PhotoImage(file="help.png")
+    help_button.config(image=help_img)
+    help_button.grid(row=2, column=2, padx=(0, 40))
 
-# Keep window on screen
-window.mainloop()
+    # Keep window on screen
+    window.mainloop()
+
+main()
