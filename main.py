@@ -2,8 +2,6 @@ from tkinter import *
 from tkinter import messagebox
 import numpy as np
 import pygame
-import os
-import platform
 # ---------------------------- CONSTANTS ------------------------------- #
 
 FONT_NAME = "Helvetica Neue"
